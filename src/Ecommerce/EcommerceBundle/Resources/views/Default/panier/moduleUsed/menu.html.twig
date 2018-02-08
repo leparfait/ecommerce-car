@@ -1,0 +1,16 @@
+    <div class="well">
+        <ul class="nav nav-list">
+            <li class="nav-header">Votre Panier</li>
+            <li>
+             <a href="{{ path('panier')}}">
+               {% if articles == 0 %}
+                Vous n'avez pas de produit dans votre panier
+               {% elseif articles == 1 %}
+                 Vous avez {{ articles }} produit dans votre panier
+               {% else %}
+                 Vous avez {{ articles }} produits dans votre panier
+               {% endif %}
+             </a>
+            </li>
+        </ul>
+    </div>    

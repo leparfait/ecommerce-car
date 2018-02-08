@@ -1,0 +1,17 @@
+body {
+    padding-bottom: 0px;
+    padding-top: 60px;
+}
+.loading{
+    float:right;
+    margin-right: 115px;
+    width:30px;
+    height:30px;
+    display:block;
+    background:url('../img/loading.gif');
+       
+}
+footer{
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}

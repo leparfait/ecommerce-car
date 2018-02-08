@@ -1,0 +1,65 @@
+ecommerce_adminProduits:
+    resource: "@EcommerceBundle/Resources/config/routing/produits.yml"
+    prefix:   /admin/produits
+
+ecommerce_adminCategories:
+    resource: "@EcommerceBundle/Resources/config/routing/categories.yml"
+    prefix:   /admin/categories
+    
+ecommerce_commandesCategories:
+    resource: "@EcommerceBundle/Resources/config/routing/commandes.yml"
+    prefix:   /admin/commandes
+
+
+produits:
+    path:     /
+    defaults: { _controller: EcommerceBundle:produits:produits }
+
+presentation:
+    path:     /produit/{id}
+    defaults: { _controller: EcommerceBundle:produits:presentation }
+
+panier:
+    path:     /panier
+    defaults: { _controller: EcommerceBundle:panier:panier }
+
+livraison:
+    path:     /panier/livraison
+    defaults: { _controller: EcommerceBundle:panier:livraison }
+
+validation:
+    path:     /panier/validation
+    defaults: { _controller: EcommerceBundle:panier:validation }
+    
+test:         
+    path:     /test
+    defaults: { _controller: EcommerceBundle:Test:ajout }
+    
+categoriesProduits:
+    path:     /categorie/{categorie}
+    defaults: { _controller: EcommerceBundle:produits:categorie }
+    
+rechercheProduits:
+    path:     /produit/
+    defaults: { _controller: EcommerceBundle:produits:rechercheTraitement }
+
+supprimer:
+    path:     /supprimer/{id}
+    defaults: { _controller: EcommerceBundle:panier:supprimer }
+
+ajouter:
+    path:     /ajouter/{id}
+    defaults: { _controller: EcommerceBundle:panier:ajouter }
+
+livraisonAdresseSuppression:
+    path:     /livaison/adresse/suppression/{id}
+    defaults: { _controller: EcommerceBundle:panier:adresseSuppression }
+    
+facturationAdresseSuppression:
+    path:     /adresse/{id}
+    defaults: { _controller: EcommerceBundle:panier:livraisonAdresseSuppression }
+    
+validationCommande:
+    path:      /api/banque/{id}
+    defaults: { _controller: EcommerceBundle:commandes:validationCommande }
+    

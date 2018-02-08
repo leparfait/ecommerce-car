@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block titre %}AureyShop!{% endblock %}</title>
+        <meta name="keyWords" content="{% block motCles %} {% endblock %}" />
+        <meta name="description" content="{% block description %} {% endblock %}" />
+        <link rel="stylesheet" href=" {{ asset('css/bootstrap.css') }}" />
+        <link rel="stylesheet" href=" {{ asset('css/bootstrap-responsive.css') }}" />
+        <link rel="stylesheet" href=" {{ asset('css/font-awesome.min.css') }}" />
+        <link rel="stylesheet" href=" {{ asset('css/style.css') }}" />
+        <link rel="stylesheet" href=" {{ asset('css/font-awesome.css') }}" />
+        {% block stylesheets %}{% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top" style="background-color: #F9E60D">
+        <div class="navbar-inner">
+            <div class="container">
+                <button class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse" type="button">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <img class="brand" src="{{asset('img/') }}" href="{{path('produits')}}"ss alt="" >
+                <a class="brand" href="{{path('produits')}}">Aurey-shop</a>
+                <div class="nav-collapse collapse">
+                    {% render(controller('EcommerceBundle:produits:recherche'))%}
+                </div>
+            </div>
+        </div>
+    </div>    
+{% block body %}{% endblock %}
+<hr />
+
+<footer>
+    <div class="container">
+        <div class="row footer-widgets">
+
+          <!-- Start Subscribe & Social Links Widget -->
+          <div class="col-md-3 col-xs-12">
+            <div class="footer-widget mail-subscribe-widget">
+              <h4>Get in touch<span class="head-line"></span></h4>
+              <p>Join our mailing list to stay up to date and get notices about our new releases!</p>
+              <form class="subscribe">
+                <input type="text" placeholder="mail@example.com">
+                <input type="submit" class="btn btn-primary" value="Send">
+              </form>
+            </div>
+            <div class="footer-widget social-widget">
+              <h4>Suivez nous<span class="head-line"></span></h4>
+              <ul class="social-icons">
+                <li>
+                  <a class="facebook" href="#"><i class="fa fa-facebook"></i></a>
+                </li>
+                <li>
+                  <a class="twitter" href="#"><i class="fa fa-twitter"></i></a>
+                </li>
+                <li>
+                  <a class="google" href="#"><i class="fa fa-google-plus"></i></a>
+                </li>
+                <li>
+                  <a class="linkdin" href="#"><i class="fa fa-linkedin"></i></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- .col-md-3 -->
+          <!-- End Subscribe & Social Links Widget -->
+
+
+          <!-- Start Twitter Widget -->
+          <div class="col-md-3 col-xs-12">
+            <div class="footer-widget twitter-widget">
+              <h4>Twitter Feed<span class="head-line"></span></h4>
+              <ul>
+                <li>
+                  <p><a href="#">@GrayGrids </a> Lorem ipsum dolor et, consectetur adipiscing eli.</p>
+                  <span>28 February 2014</span>
+                </li>
+                <li>
+                  <p><a href="#">@GrayGrids </a> Lorem ipsum dolor et, consectetur adipiscing eli.An Fusce eleifend aliquet nis application.</p>
+                  <span>26 February 2014</span>
+                </li>
+                <li>
+                  <p><a href="#">@GrayGrids </a> Lorem ipsum dolor et, consectetur adipiscing eli.</p>
+                  <span>28 February 2014</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- .col-md-3 -->
+          <!-- End Twitter Widget -->
+
+
+          <!-- Start Flickr Widget -->
+          <div class="col-md-3 col-xs-12">
+            <div class="footer-widget flickr-widget">
+              <h4><img src="images/footer-margo.png" class="img-responsive" alt="Footer Logo" /></h4>
+              <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
+              <ul>
+                <li><span>Phone Number:</span> +01 234 567 890</li>
+                <li><span>Email:</span> company@company.com</li>
+                <li><span>Website:</span> www.yourdomain.com</li>
+              </ul>
+            </div>
+          </div>
+          <!-- .col-md-3 -->
+          <!-- End Flickr Widget -->
+       
+        </div>
+        <!-- .row -->
+
+        <!-- Start Copyright -->
+        <div class="copyright-section">
+          <div class="row">
+            <div class="col-md-6">
+              <p>&copy; 2017 AureyShop - All Rights Reserved <a href="#">Groupeonana.com</a> </p>
+            </div>
+            <!-- .col-md-6 -->
+            <div class="col-md-6">
+              <ul class="footer-nav">
+                  <li> <h4>Informations</h4>
+                      <p> {% render(controller('PagesBundle:Page:menu'))%}</p></li>
+                <li><h4>Notre entrepôt</h4>
+                <p><i class="icon-map-marker"></i>&nbsp;{{ adresse }}</p>
+                <p>&copy; Copyright {{ "now"|date('Y')}} - Aurey</p></li>
+                <li><h4>Nous contacter</h4>
+                <p><i class="icon-phone"></i>&nbsp;Tel: {{ telephone }}</p>
+                <p><i class="icon-print"></i>&nbsp;Fax: {{ fax }}</p></li>
+              </ul>
+            </div>
+            <!-- .col-md-6 -->
+          </div>
+          <!-- .row -->
+        </div>
+        <!-- End Copyright -->
+
+      </div>
+    </footer>
+    </div>
+</footer>	
+<script src=" {{ asset('js/jquery-1.10.0.min.js') }}"></script>
+<script src=" {{ asset('js/bootstrap.js') }}"></script>
+<script src=" {{ asset('js/main.js') }}"></script>
+</body>
+</html>

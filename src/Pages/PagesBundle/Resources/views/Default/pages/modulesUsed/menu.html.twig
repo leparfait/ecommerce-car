@@ -1,0 +1,5 @@
+<ol>
+    {% for page in pages %}
+        <li><a href="{{ path('pages', {'id':page.id}) }}">{{page.titre}}</a></li>
+    {% endfor %}
+</ol>

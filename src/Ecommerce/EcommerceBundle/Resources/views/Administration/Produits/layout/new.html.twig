@@ -1,0 +1,15 @@
+{% extends "::Layout/layoutAdmin.html.twig" %}
+
+{% block body -%}
+    <h2>Produits creation</h2>
+    <form action="{{ path('adminProduits_create')}} " method="POST" {{ form_enctype(form)}} >
+     {{ form(form) }}
+    </form>
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('adminProduits') }}">
+            Back to the list
+        </a>
+    </li>
+</ul>
+{% endblock %}
